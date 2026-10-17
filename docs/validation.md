@@ -49,8 +49,10 @@ On 2026-10-17, all 46 retained experimental checkpoints passed strict loading
 and finite-parameter checks: six PAMPA models (three splits, with/without JEPA),
 20 directly trained cellular models and 20 PAMPA-adapted cellular models.
 No missing/unexpected parameter keys or shape mismatches were tolerated.
-An initial eight-molecule PAMPA prediction check agreed with the saved outputs
-to a maximum absolute difference of 4.76837158e-7 on the original modelling scale.
+Eight evenly spaced PAMPA random-test molecules were checked for each variant
+against saved outputs: maximum absolute difference was 4.76837158e-7 for NCMol
+and 0 for NCMol+JEPA on the original modelling scale. These are sampled
+prediction checks, not a full rerun of the 512-molecule test sets.
 
 Batch loading can be repeated with:
 
