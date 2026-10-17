@@ -1,0 +1,8 @@
+# Exact versions in the successful local CPU integration run (Python 3.12).
+# This is not an operating-system-independent transitive dependency lockfile.
+torch==2.4.0
+torch-geometric==2.7.0
+numpy==2.4.6
+scipy==1.15.3
+scikit-learn==1.7.2
+rdkit==2025.9.1
