@@ -9,13 +9,12 @@ import torch
 
 from ncmol.inference import graph_from_smiles, load_model
 from ncmol.utils import move_batch
-from train import collate
+from ncmol.data import collate
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--checkpoint", required=True, type=Path, help="Trusted trained NCMol best.pt")
-    parser.add_argument("--vendor-dir", type=Path, default=Path("vendor/LiTEN-FF"))
     inputs = parser.add_mutually_exclusive_group(required=True)
     inputs.add_argument("--input-csv", type=Path)
     inputs.add_argument("--data", type=Path, help="Trusted processed explicit-H dataset .pt")
@@ -34,7 +33,7 @@ def main():
     if args.output.resolve() in {p.resolve() for p in (args.input_csv, args.data, args.checkpoint) if p}:
         parser.error("Output must not overwrite an input/checkpoint")
     torch.set_num_threads(args.threads)
-    model, mean, std = load_model(args.checkpoint, args.vendor_dir, args.device)
+    model, mean, std = load_model(args.checkpoint, args.device)
     if args.data:
         payload = torch.load(args.data, map_location="cpu", weights_only=False)
         records = payload["splits"][args.strategy][args.split]

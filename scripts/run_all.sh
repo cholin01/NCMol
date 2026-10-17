@@ -5,12 +5,10 @@ project_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "${project_root}"
 
 python_bin="${PYTHON_BIN:-python}"
-vendor_dir="${VENDOR_DIR:-vendor/LiTEN-FF}"
 random_init="${RANDOM_INIT:-}"
 cell_source_dir="${CELL_SOURCE_DIR:-data/processed/cell_liten}"
 
 common=(
-  --vendor-dir "${vendor_dir}"
   --device "${DEVICE:-cuda:0}"
   --seed 42 --batch-size 16 --epochs 30 --lr 1e-4
   --alignment-weight 0.1 --num-workers 4

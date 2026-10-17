@@ -10,10 +10,10 @@ from rdkit import Chem
 from rdkit.Chem import AllChem
 
 from prepare_data import graph_2d
-from train import NCMol
+from .model import NCMol
 
 
-def load_model(checkpoint, vendor_dir, device="cpu"):
+def load_model(checkpoint, device="cpu"):
     # Legacy training checkpoints contain argparse Path objects: load only trusted files.
     payload = torch.load(checkpoint, map_location="cpu", weights_only=False)
     if not isinstance(payload, dict) or not {"model", "target_mean", "target_std"} <= payload.keys():
@@ -27,7 +27,7 @@ def load_model(checkpoint, vendor_dir, device="cpu"):
     if not isinstance(options, dict):
         options = vars(options)
     hidden = state["jepa_predictor.1.weight"].shape[0] if jepa else 256
-    model = NCMol(vendor_dir, checkpoint=None, dropout=float(options.get("dropout", 0.2)),
+    model = NCMol(checkpoint=None, dropout=float(options.get("dropout", 0.2)),
                   jepa=jepa, jepa_hidden_dim=hidden)
     # Loading the complete trained state avoids requiring a separate initialization file.
     model.load_state_dict(state, strict=True)

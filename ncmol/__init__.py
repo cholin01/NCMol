@@ -1,5 +1,5 @@
 """NCMol model components."""
 
-from .backbone import SpatialEncoderRegressor
+from .model import NCMol
 
-__all__ = ["SpatialEncoderRegressor"]
+__all__ = ["NCMol"]

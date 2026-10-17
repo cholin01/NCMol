@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from ncmol.inference import graph_from_smiles, load_model
 from ncmol.utils import metrics
-from train import collate
+from ncmol.data import collate
 
 
 def run(*args, success=True):
@@ -36,10 +36,8 @@ def predictions(path):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--vendor-dir", required=True, type=Path)
     args = parser.parse_args()
     torch.set_num_threads(1)
-    vendor = args.vendor_dir.resolve()
     with tempfile.TemporaryDirectory(prefix="ncmol-smoke-") as directory:
         work = Path(directory)
         source = work / "labelled.csv"
@@ -63,7 +61,7 @@ def main():
             options = ["--jepa-weight", "0.1"] if variant != "base" else []
             if variant == "transfer":
                 options += ["--model-init", checkpoints["jepa"]]
-            run("train.py", "--data", data, "--strategy", "random", "--vendor-dir", vendor,
+            run("train.py", "--data", data, "--strategy", "random",
                 "--output-dir", output, "--device", "cpu", "--epochs", 1,
                 "--batch-size", 2, "--num-workers", 0, "--threads", 1, *options)
             checkpoint = output / "best.pt"
@@ -73,12 +71,12 @@ def main():
             assert np.isfinite(history["train_mse_normalized"])
             for batch_size in (1, 2):
                 predicted = work / f"{variant}_{batch_size}.csv"
-                run("predict.py", "--checkpoint", checkpoint, "--vendor-dir", vendor,
+                run("predict.py", "--checkpoint", checkpoint,
                     "--data", data, "--output", predicted, "--batch-size", batch_size)
                 np.testing.assert_allclose(predictions(predicted),
                                            predictions(output / "predictions_test.csv"), atol=2e-5, rtol=1e-5)
             print(f"PASS: {variant} training/backward/checkpoint/CLI inference agrees with evaluation", flush=True)
-        model, mean, std = load_model(checkpoints["jepa"], vendor)
+        model, mean, std = load_model(checkpoints["jepa"])
         macrocycle = graph_from_smiles("C1CCCCCCCCCCC1", candidates=4, keep=3)
         assert len(macrocycle["conformers"]) >= 2
         batch = collate([(macrocycle, {"y": 0.0})])
@@ -92,20 +90,20 @@ def main():
         smiles_csv = work / "smiles.csv"
         smiles_csv.write_text("smiles\nC1CCCCCCCCCCC1\nCCO\n")
         raw_output = work / "raw.csv"
-        run("predict.py", "--checkpoint", checkpoints["jepa"], "--vendor-dir", vendor,
+        run("predict.py", "--checkpoint", checkpoints["jepa"],
             "--input-csv", smiles_csv, "--output", raw_output,
             "--candidate-conformers", 4, "--keep-conformers", 3)
         assert len(predictions(raw_output)) == 2 and np.isfinite(predictions(raw_output)).all()
         print("PASS: raw SMILES -> conformers -> JEPA checkpoint -> CSV", flush=True)
         smiles_csv.write_text("smiles\nnot_a_molecule\n")
         bad_output = work / "invalid.csv"
-        run("predict.py", "--checkpoint", checkpoints["jepa"], "--vendor-dir", vendor,
+        run("predict.py", "--checkpoint", checkpoints["jepa"],
             "--input-csv", smiles_csv, "--output", bad_output, success=False)
         assert not bad_output.exists()
         broken = work / "broken.pt"
         torch.save({"model": model.state_dict(), "target_mean": 0, "target_std": 0}, broken)
         try:
-            load_model(broken, vendor)
+            load_model(broken)
         except ValueError:
             pass
         else:
@@ -123,7 +121,7 @@ def main():
         del state["head.1.weight"]
         torch.save({"model": state, "target_mean": mean, "target_std": std}, broken)
         try:
-            load_model(broken, vendor)
+            load_model(broken)
         except RuntimeError:
             pass
         else:

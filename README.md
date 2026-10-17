@@ -1,46 +1,51 @@
 # NCMol
 
-Topology-conditioned multi-conformer learning for nonpeptidic macrocycle
-permeability prediction. This code-only release contains NCMol-specific model,
-training, data preparation, inference and evaluation workflows. Datasets,
-trained weights, experiment outputs and third-party source code are excluded.
+**Topology-conditioned multi-conformer learning for molecular permeability prediction across artificial and cellular membranes**
 
-## Installation
+NCMol predicts permeability of nonpeptidic macrocycles by combining an explicit-hydrogen
+molecular graph with multiple 3D conformers. The package supports PAMPA, Caco-2 and MDCK
+regression tasks, optional cross-conformer JEPA, and PAMPA-to-cellular adaptation.
 
-Python 3.10+ is required. Run from the repository root:
+## Model
+
+The model combines:
+
+- **Recurrent topology learning:** gated directed bond messages, degree-normalized
+  aggregation, GRU atom updates and evolving bond states.
+- **Topology-conditioned geometry:** atom-aligned gated residual updates after
+  geometric layers 3 and 5.
+- **Multi-conformer prediction:** gated 2D–3D fusion, a shared regression head and
+  averaging of conformer predictions.
+- **Optional JEPA:** an EMA target predicts representations across conformers during
+  training; inference uses only the online prediction path.
+
+The full encoder implementation is included in `ncmol/`; no separate source checkout
+or `vendor` directory is needed. The geometric interaction equations are retained
+from the trained model, while the recurrent topology branch and cross-modal updates
+implement the NCMol-specific changes. Geometric module provenance is documented below.
+Parameter keys remain compatible with existing NCMol checkpoints.
+
+## Install
+
+Python 3.10 or later:
 
 ```bash
+git clone https://github.com/cholin01/NCMol.git
+cd NCMol
 python -m venv .venv
 source .venv/bin/activate
-python -m pip install -r requirements.txt
-git clone https://github.com/lingcon01/LiTEN-FF.git vendor/LiTEN-FF
-git -C vendor/LiTEN-FF checkout ee38b4ceda1b4f699d8e6b294f38255a70746cc1
+pip install -r requirements.txt
 ```
 
-LiTEN-FF supplies the external geometric architecture; consult its repository
-for terms of use. Its source remains outside this code release, in the ignored
-vendor directory. This does not require SPICE weights. On CUDA, install a
-PyTorch build compatible with your driver before installing other requirements.
-Native PyTorch scatter fallbacks and precomputed spatial edges support the
-non-periodic path without torch-scatter or torch-cluster.
-
-## Models
-
-- NCMol: supervised regression and bidirectional 2D–3D representation alignment.
-- NCMol+JEPA: adds an EMA target and cross-conformer latent prediction.
-- PAMPA adaptation: initializes representation modules from a trained PAMPA
-  NCMol model, resets the task regression head, and fine-tunes all encoders.
-
-Direct runs start from random initialization when --checkpoint is omitted.
-An optional backbone checkpoint supports legacy initialization. The complete
-trained best.pt is sufficient for inference; the original initialization
-checkpoint is not needed. Adapted models use task-trained PAMPA weights.
+For GPU execution, install a CUDA-compatible PyTorch build. CPU execution is supported.
+No SPICE initialization is required. Trained weights and experimental datasets are
+not included in this repository.
 
 ## Prepare data
 
-Supply a CSV with smiles,y,split columns. Labels must be on the desired
-endpoint modelling scale (e.g. log permeability), not z-scores. Assign train,
-val and test splits before preparation. A format-only example:
+Provide a CSV with `smiles`, `y` and `split` columns. Use labels on the original
+modelling scale, such as log permeability, and assign `train`, `val` and `test`
+before preparation. Aggregate repeated measurements before splitting.
 
 ```text
 smiles,y,split
@@ -50,122 +55,108 @@ CCCC,-6.4,val
 CCCO,-5.2,test
 ```
 
-These are toy examples, not scientific training data. Aggregate repeated assay
-measurements before splitting. Duplicate canonical isomeric SMILES and invalid
-labels are rejected rather than silently removed.
+The rows above illustrate the format only.
 
 ```bash
-python prepare_csv.py --input labelled.csv --output data/my_endpoint.pt \
+python prepare_csv.py --input labelled.csv --output data/pampa.pt \
   --strategy random --candidate-conformers 10 --keep-conformers 3
 ```
 
-The strategy flag names the supplied partition; it does not construct a
-random, cliff or scaffold split. ETKDGv3 generates explicit-H conformers with
-macrocycle settings, followed by MMFF94s or UFF when MMFF parameters are
-unavailable. Up to three lowest-energy conformers are retained; RMS pruning
-may yield fewer. Finite non-converged optimization results retain their status
-in the saved data. Preparation fails if no usable conformer is available.
-Spatial edges use a 5 Å cutoff and at most 32 neighbors including self edges.
-Both streams share RDKit atom order.
+Preparation generates explicit-H ETKDGv3 conformers with macrocycle settings,
+optimizes them with MMFF94s (UFF fallback), and retains up to three lowest-energy
+conformers. RMS pruning can produce fewer than three. The 2D and 3D representations
+share atom ordering. Invalid molecules and duplicate canonical isomeric SMILES
+are rejected. The strategy flag labels the provided partitions; it does not create
+random, activity-cliff or scaffold splits.
 
-Existing trusted 3D payloads can instead be augmented:
+Existing processed 3D datasets can be augmented with `prepare_data.py --input
+data/three_d.pt --output data/explicit_h.pt`. Dataset format and evaluation notes
+are in [docs/validation.md](docs/validation.md).
+
+## Train
 
 ```bash
-python prepare_data.py --input data/three_d.pt --output data/explicit_h.pt
+python train.py --data data/pampa.pt --strategy random \
+  --output-dir runs/pampa --device cpu --num-workers 0
 ```
 
-Payloads contain graphs and splits[strategy][train|val|test]. Each row has
-key,smiles,y. Each graph has smiles,conformers; each conformer has tensor
-z,pos,edge_index. Topology preparation adds z_2d,x_2d,edge_index_2d,edge_attr_2d.
-Do not reorder conformer atoms independently of topology.
+Defaults: 30 epochs, batch size 16, learning rate 1e-4, no gradient accumulation.
+All encoders are trainable. Add `--jepa-weight 0.1` to train NCMol+JEPA.
+Use `--device cuda:0` for GPU execution.
 
-## Train and adapt
+For PAMPA-to-cellular adaptation:
 
 ```bash
-python train.py --data data/my_endpoint.pt --strategy random \
-  --vendor-dir vendor/LiTEN-FF --output-dir runs/direct \
-  --device cpu --epochs 30 --batch-size 16 --num-workers 0
-
-python train.py --data data/my_endpoint.pt --strategy random \
-  --vendor-dir vendor/LiTEN-FF --output-dir runs/direct_jepa \
-  --device cpu --epochs 30 --batch-size 16 --num-workers 0 --jepa-weight 0.1
-
 python train.py --data data/cellular.pt --strategy random \
-  --vendor-dir vendor/LiTEN-FF --output-dir runs/transfer \
-  --device cpu --num-workers 0 --model-init runs/pampa/best.pt
+  --model-init runs/pampa/best.pt --output-dir runs/cellular_transfer \
+  --device cpu --num-workers 0
 ```
 
-Use --device cuda:0 for a suitable GPU. Default learning rate is 1e-4; no
-gradient accumulation is used. Label mean/std are fitted on training labels
-only. Supervised loss uses standardized labels; metrics and exported
-predictions are restored to the original modelling scale. Minimum validation
-RMSE selects the checkpoint. The retained protocol logs test metrics each
-epoch; they must not be used for model selection. Non-finite losses, gradients
-or gradient norms skip the batch; an epoch with no valid update fails.
-Existing output runs are not overwritten.
+The task head is initialized anew; representation modules are transferred and
+fine-tuned. Omit `--model-init` for direct training. An optional `--checkpoint`
+backbone initialization file is supported for legacy reproduction.
 
-Outputs: config.json, history.jsonl, best.pt, metrics.json, predictions_val.csv
-and predictions_test.csv. Undefined singleton/constant correlations report NaN.
+Labels are standardized with training-set statistics. Loss uses standardized
+labels; metrics and exported predictions use the original modelling scale.
+The lowest validation RMSE selects `best.pt`. Test metrics are recorded each epoch
+but must not guide selection. Non-finite updates are skipped and recorded.
+Existing training runs are protected against accidental overwrite.
 
-Run bash scripts/run_all.sh for the retained experiment grid after obtaining
-processed PAMPA and cellular inputs. Environment overrides are PYTHON_BIN,
-VENDOR_DIR, CELL_SOURCE_DIR, DEVICE and optional RANDOM_INIT.
-python summarize_results.py aggregates this repository's runs directory.
+Each run produces `best.pt`, `config.json`, `history.jsonl`, `metrics.json`,
+`predictions_val.csv` and `predictions_test.csv`.
 
-## Inference
+## Predict
 
-Provide a trained NCMol checkpoint for the desired endpoint; none is bundled.
-Only load trusted .pt files: legacy checkpoints use Python pickle, which can
-execute code. The loader checks the complete parameter state and label
-statistics; it never falls back to random weights. Base and JEPA checkpoints
-are detected automatically.
-
-For a CSV containing a smiles column, with no labels required:
+A trained NCMol checkpoint is required. Supply a CSV with a `smiles` column:
 
 ```bash
-python predict.py --checkpoint runs/direct/best.pt \
-  --vendor-dir vendor/LiTEN-FF --input-csv molecules.csv \
-  --output outputs/predictions.csv --device cpu --batch-size 16
+python predict.py --checkpoint runs/pampa/best.pt \
+  --input-csv molecules.csv --output outputs/predictions.csv --device cpu
 ```
 
-For exact reevaluation using saved training conformers:
+To evaluate saved conformers without regeneration:
 
 ```bash
-python predict.py --checkpoint runs/direct/best.pt \
-  --vendor-dir vendor/LiTEN-FF --data data/my_endpoint.pt \
+python predict.py --checkpoint runs/pampa/best.pt --data data/pampa.pt \
   --strategy random --split test --output outputs/test.csv
 ```
 
-Inference averages conformer predictions and applies checkpoint mean/std.
-Output columns: input_index,smiles,y_pred,n_conformers; processed-data mode
-also exports y_true. Input order and duplicate input rows are retained.
-Invalid molecules and non-finite predictions fail explicitly.
-y_pred stays on the checkpoint modelling scale, e.g. log permeability; it is
-not automatically exponentiated. Regenerated conformers can yield different
-results from stored conformers, particularly across RDKit versions.
+Both standard and JEPA checkpoints are detected automatically. Predictions are
+averaged over conformers and restored using the checkpoint's label statistics.
+Output includes `input_index`, `smiles`, `y_pred` and `n_conformers`; dataset
+evaluation also includes `y_true`. Log-scale outputs are not exponentiated.
+Only load trusted checkpoint and dataset files.
 
-## Verification
+## Verify
 
 ```bash
-python tests/smoke_inference.py --vendor-dir vendor/LiTEN-FF
+python tests/smoke_inference.py
 ```
 
-The test uses the real geometric encoder and temporary toy data. It runs one
-epoch each for NCMol, NCMol+JEPA and transfer initialization, reloads each
-checkpoint and compares CLI inference with training evaluation at two batch
-sizes. It also checks raw-SMILES inference, conformer means, train-only label
-scaling and invalid input handling. Temporary weights are removed. Execution
-tests do not establish paper-checkpoint accuracy. See VALIDATION.md.
+This checks short NCMol, JEPA and transfer training runs, checkpoint loading,
+SMILES inference, conformer averaging, scaling and prediction consistency.
+[Validation details](docs/validation.md) distinguish software tests from experiments.
 
-## Source layout
+## Repository
 
-- train.py: architecture, collation, objectives and training.
-- ncmol/backbone.py: external geometry encoder adapter.
-- ncmol/inference.py and predict.py: checkpoint loading and inference.
-- prepare_csv.py and prepare_data.py: data preparation.
-- ncmol/compat.py and ncmol/utils.py: compatibility, scaling helpers and metrics.
-- configs/experiment_protocol.json: retained optimization settings.
-- tests/smoke_inference.py: end-to-end verification.
+```text
+ncmol/
+  model.py          NCMol, recurrent topology, cross-modal updates and JEPA
+  geometry.py       Integrated geometric encoder and interactions
+  backbone.py       Geometric encoding and checkpoint-compatible pooling
+  data.py           Dataset and atom-aligned collation
+  inference.py      Checkpoint loading and conformer generation
+  utils.py          Metrics, seeding and device helpers
+train.py            Training and evaluation
+predict.py          Standalone inference
+prepare_csv.py      Preparation from labelled SMILES
+prepare_data.py     Topology augmentation of stored 3D inputs
+scripts/run_all.sh  Retained experiment grid
+```
 
-Do not commit datasets, external source trees, weights, manuscripts or
-experimental prediction tables to this code-only release.
+## License and attribution
+
+NCMol is released under the [MIT license](LICENSE). The integrated geometry
+implementation is adapted from [LiTEN-FF](https://github.com/lingcon01/LiTEN-FF),
+revision `ee38b4ceda1b4f699d8e6b294f38255a70746cc1`; its original MIT copyright
+and license are preserved in [licenses/LiTEN-FF-MIT.txt](licenses/LiTEN-FF-MIT.txt).
