@@ -1,0 +1,3310 @@
+{
+  "scope": "saved predictions and reported metrics only",
+  "training_leakage_status": "UNVERIFIED: original splits, checkpoints and baseline pipelines required",
+  "sources": [
+    {
+      "name": "all_test_predictions_long.csv",
+      "sha256": "4860eacb21d65c65c8d0d537543ea10b3b1e9bbeb58a15d410eb96abfc217b2f"
+    },
+    {
+      "name": "all_metrics_long.csv",
+      "sha256": "97dcdd6311880dbf56fe2932ec67e42db5348a166956f5dcc5469490d46875bd"
+    }
+  ],
+  "prediction_rows": 7726,
+  "evaluation_groups": 136,
+  "matched_evaluation_sets": 13,
+  "issues": [],
+  "checks": [
+    {
+      "section": "cell_direct",
+      "family": "Graph baseline",
+      "model": "GAT",
+      "endpoint": "caco2_log10_er",
+      "split": "random",
+      "partition": "test",
+      "n": 45,
+      "metrics": {
+        "rmse": 0.6757533744188099,
+        "mae": 0.5107696441312631,
+        "r2": 0.3087939927962704,
+        "pearson": 0.578420780441564,
+        "spearman": 0.4894261819699466,
+        "ci": 0.6771255060728745
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 0.0,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Graph baseline",
+      "model": "GAT",
+      "endpoint": "caco2_log10_er",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 45,
+      "metrics": {
+        "rmse": 0.8429626893761304,
+        "mae": 0.6780962427457173,
+        "r2": -0.19145163175420365,
+        "pearson": 0.1289618822262391,
+        "spearman": 0.16588708119535944,
+        "ci": 0.5607287449392713
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 2.7755575615628914e-17,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Graph baseline",
+      "model": "GAT",
+      "endpoint": "caco2_log_papp_ab",
+      "split": "random",
+      "partition": "test",
+      "n": 55,
+      "metrics": {
+        "rmse": 0.7406066061685241,
+        "mae": 0.6178351402282715,
+        "r2": 0.27148394928195774,
+        "pearson": 0.6054821766003042,
+        "spearman": 0.5478424072063176,
+        "ci": 0.6993906567366283
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 1.1102230246251565e-16,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Graph baseline",
+      "model": "GAT",
+      "endpoint": "caco2_log_papp_ab",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 56,
+      "metrics": {
+        "rmse": 0.7300663540461216,
+        "mae": 0.5679815922464643,
+        "r2": 0.14646546910785296,
+        "pearson": 0.4687908061186686,
+        "spearman": 0.47883695587711417,
+        "ci": 0.66821499668215
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 1.6653345369377348e-16,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Graph baseline",
+      "model": "GAT",
+      "endpoint": "caco2_log_papp_ba",
+      "split": "random",
+      "partition": "test",
+      "n": 46,
+      "metrics": {
+        "rmse": 0.5403883617647502,
+        "mae": 0.3965521999027418,
+        "r2": 0.15309471423764442,
+        "pearson": 0.47167015150349245,
+        "spearman": 0.43410422448350283,
+        "ci": 0.6521739130434783
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 0.0,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Graph baseline",
+      "model": "GAT",
+      "endpoint": "caco2_log_papp_ba",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 47,
+      "metrics": {
+        "rmse": 0.5766955615754962,
+        "mae": 0.41338238817580203,
+        "r2": 0.0074250656048530095,
+        "pearson": 0.13232991902026311,
+        "spearman": -0.12546253469010177,
+        "ci": 0.45235892691951896
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 5.551115123125783e-17,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Graph baseline",
+      "model": "GAT",
+      "endpoint": "mdck_log10_er",
+      "split": "random",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.563930618171142,
+        "mae": 0.4234754052013159,
+        "r2": 0.03207160627417893,
+        "pearson": 0.33223941354790776,
+        "spearman": 0.32523923448215625,
+        "ci": 0.6554621848739496
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 5.551115123125783e-17,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Graph baseline",
+      "model": "GAT",
+      "endpoint": "mdck_log10_er",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.7107799414131392,
+        "mae": 0.5922898696735501,
+        "r2": -0.11705120511589473,
+        "pearson": -0.28788756748804545,
+        "spearman": -0.3899927472297349,
+        "ci": 0.3445378151260504
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 1.1102230246251565e-16,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Graph baseline",
+      "model": "GAT",
+      "endpoint": "mdck_log_papp_ab",
+      "split": "random",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.681554694582783,
+        "mae": 0.5892744362354279,
+        "r2": -0.08994908860715167,
+        "pearson": -0.25541731376451526,
+        "spearman": -0.5209714434691554,
+        "ci": 0.31932773109243695
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 0.0,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Graph baseline",
+      "model": "GAT",
+      "endpoint": "mdck_log_papp_ab",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.808308528801568,
+        "mae": 0.6989486217498779,
+        "r2": -0.09549347009497233,
+        "pearson": -0.10178647690679873,
+        "spearman": -0.22941176470588234,
+        "ci": 0.43333333333333335
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 4.163336342344337e-17,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Graph baseline",
+      "model": "GCN",
+      "endpoint": "caco2_log10_er",
+      "split": "random",
+      "partition": "test",
+      "n": 45,
+      "metrics": {
+        "rmse": 0.712452197565335,
+        "mae": 0.5452371035185125,
+        "r2": 0.2316793273824217,
+        "pearson": 0.5072493566472819,
+        "spearman": 0.40272745327531073,
+        "ci": 0.6396761133603239
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 1.1102230246251565e-16,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Graph baseline",
+      "model": "GCN",
+      "endpoint": "caco2_log10_er",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 45,
+      "metrics": {
+        "rmse": 0.8609754488662127,
+        "mae": 0.6889119744300842,
+        "r2": -0.24291447599082439,
+        "pearson": 0.10108054010875378,
+        "spearman": 0.13077277846417337,
+        "ci": 0.541497975708502
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 0.0,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Graph baseline",
+      "model": "GCN",
+      "endpoint": "caco2_log_papp_ab",
+      "split": "random",
+      "partition": "test",
+      "n": 55,
+      "metrics": {
+        "rmse": 0.7525059403555407,
+        "mae": 0.619588583165949,
+        "r2": 0.24788573350723253,
+        "pearson": 0.5369213595908202,
+        "spearman": 0.4543224177780526,
+        "ci": 0.6547054840893703
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 1.1102230246251565e-16,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Graph baseline",
+      "model": "GCN",
+      "endpoint": "caco2_log_papp_ab",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 56,
+      "metrics": {
+        "rmse": 0.7205417219133649,
+        "mae": 0.597285773072924,
+        "r2": 0.16859105245998096,
+        "pearson": 0.42663977779653006,
+        "spearman": 0.36188220990112613,
+        "ci": 0.6204379562043796
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 1.1102230246251565e-16,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Graph baseline",
+      "model": "GCN",
+      "endpoint": "caco2_log_papp_ba",
+      "split": "random",
+      "partition": "test",
+      "n": 46,
+      "metrics": {
+        "rmse": 0.5457416997017369,
+        "mae": 0.40581346594769024,
+        "r2": 0.13623192690300956,
+        "pearson": 0.4779647071627346,
+        "spearman": 0.34406413814369413,
+        "ci": 0.6202898550724638
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 1.1102230246251565e-16,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Graph baseline",
+      "model": "GCN",
+      "endpoint": "caco2_log_papp_ba",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 47,
+      "metrics": {
+        "rmse": 0.5731407906956897,
+        "mae": 0.4084780774217971,
+        "r2": 0.019623883114218477,
+        "pearson": 0.19681320529827434,
+        "spearman": -0.15460222016651248,
+        "ci": 0.4431082331174838
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 5.551115123125783e-17,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Graph baseline",
+      "model": "GCN",
+      "endpoint": "mdck_log10_er",
+      "split": "random",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.5607437059373546,
+        "mae": 0.4078828562051058,
+        "r2": 0.04298070228229567,
+        "pearson": 0.4048299598155276,
+        "spearman": 0.478292991885524,
+        "ci": 0.6890756302521008
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 0.0,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Graph baseline",
+      "model": "GCN",
+      "endpoint": "mdck_log10_er",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.713993687194991,
+        "mae": 0.5921668941155076,
+        "r2": -0.1271753917506646,
+        "pearson": -0.3363771021701316,
+        "spearman": -0.3958794302067875,
+        "ci": 0.3445378151260504
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 5.551115123125783e-17,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Graph baseline",
+      "model": "GCN",
+      "endpoint": "mdck_log_papp_ab",
+      "split": "random",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.6662929450629933,
+        "mae": 0.5741677284240723,
+        "r2": -0.04168213273548016,
+        "pearson": 0.19634785965245966,
+        "spearman": 0.19278886749847268,
+        "ci": 0.5546218487394958
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 5.551115123125783e-17,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Graph baseline",
+      "model": "GCN",
+      "endpoint": "mdck_log_papp_ab",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.8071413683919233,
+        "mae": 0.6904550492763519,
+        "r2": -0.09233206963970098,
+        "pearson": -0.17841876437816906,
+        "spearman": -0.22941176470588234,
+        "ci": 0.4
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 2.7755575615628914e-17,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Graph baseline",
+      "model": "SchNet",
+      "endpoint": "caco2_log10_er",
+      "split": "random",
+      "partition": "test",
+      "n": 45,
+      "metrics": {
+        "rmse": 0.6077645958587258,
+        "mae": 0.44729120209813117,
+        "r2": 0.44088408712396265,
+        "pearson": 0.6971544815199384,
+        "spearman": 0.7227090074317287,
+        "ci": 0.7722672064777328
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 2.220446049250313e-16,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Graph baseline",
+      "model": "SchNet",
+      "endpoint": "caco2_log10_er",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 45,
+      "metrics": {
+        "rmse": 0.8214672197818155,
+        "mae": 0.6489999883704716,
+        "r2": -0.1314625575404642,
+        "pearson": 0.19191070668992052,
+        "spearman": 0.1845312606942819,
+        "ci": 0.5637651821862348
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 2.7755575615628914e-17,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Graph baseline",
+      "model": "SchNet",
+      "endpoint": "caco2_log_papp_ab",
+      "split": "random",
+      "partition": "test",
+      "n": 55,
+      "metrics": {
+        "rmse": 0.6721211867999077,
+        "mae": 0.5622480219060725,
+        "r2": 0.39998911029837647,
+        "pearson": 0.6566327575364582,
+        "spearman": 0.5967672164905488,
+        "ci": 0.7122545700744752
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 1.1102230246251565e-16,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Graph baseline",
+      "model": "SchNet",
+      "endpoint": "caco2_log_papp_ab",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 56,
+      "metrics": {
+        "rmse": 0.8157004434919521,
+        "mae": 0.6763458677700588,
+        "r2": -0.06551072317867357,
+        "pearson": 0.427420757182427,
+        "spearman": 0.38046220611673803,
+        "ci": 0.6257465162574651
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 1.1102230246251565e-16,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Graph baseline",
+      "model": "SchNet",
+      "endpoint": "caco2_log_papp_ba",
+      "split": "random",
+      "partition": "test",
+      "n": 46,
+      "metrics": {
+        "rmse": 0.5502828459563782,
+        "mae": 0.40356015122455097,
+        "r2": 0.12179719777074705,
+        "pearson": 0.394144660848888,
+        "spearman": 0.3829170521122418,
+        "ci": 0.6270531400966184
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 5.551115123125783e-17,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Graph baseline",
+      "model": "SchNet",
+      "endpoint": "caco2_log_papp_ba",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 47,
+      "metrics": {
+        "rmse": 0.585796164375192,
+        "mae": 0.40476024911758746,
+        "r2": -0.024148971576284817,
+        "pearson": -0.07955859055529979,
+        "spearman": -0.19958371877890843,
+        "ci": 0.4375578168362627
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 0.0,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Graph baseline",
+      "model": "SchNet",
+      "endpoint": "mdck_log10_er",
+      "split": "random",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.5483351411107894,
+        "mae": 0.4449798632413149,
+        "r2": 0.0848673743126821,
+        "pearson": 0.3237155833846872,
+        "spearman": 0.556291541331471,
+        "ci": 0.6890756302521008
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 0.0,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Graph baseline",
+      "model": "SchNet",
+      "endpoint": "mdck_log10_er",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.7155560800040427,
+        "mae": 0.6049664216116071,
+        "r2": -0.13211385999440317,
+        "pearson": -0.26829787232689517,
+        "spearman": -0.2619573924788408,
+        "ci": 0.4117647058823529
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 5.551115123125783e-17,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Graph baseline",
+      "model": "SchNet",
+      "endpoint": "mdck_log_papp_ab",
+      "split": "random",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.6495483933998939,
+        "mae": 0.5631029903888702,
+        "r2": 0.010016830658331588,
+        "pearson": 0.2655706066319121,
+        "spearman": 0.351729307878893,
+        "ci": 0.6218487394957983
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 0.0,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Graph baseline",
+      "model": "SchNet",
+      "endpoint": "mdck_log_papp_ab",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.8332075487814409,
+        "mae": 0.7063801884651184,
+        "r2": -0.1640238067239277,
+        "pearson": -0.006765728971641974,
+        "spearman": -0.16176470588235295,
+        "ci": 0.43333333333333335
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 0.0,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "NCMol",
+      "model": "NCMol",
+      "endpoint": "caco2_log10_er",
+      "split": "random",
+      "partition": "test",
+      "n": 45,
+      "metrics": {
+        "rmse": 0.5198411966494789,
+        "mae": 0.4134544717768828,
+        "r2": 0.5909537220306278,
+        "pearson": 0.801627251726236,
+        "spearman": 0.7857566391648341,
+        "ci": 0.7945344129554656
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 2.220446049250313e-16,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "NCMol",
+      "model": "NCMol",
+      "endpoint": "caco2_log10_er",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 45,
+      "metrics": {
+        "rmse": 0.7610496840696249,
+        "mae": 0.5794478091928694,
+        "r2": 0.028851304389782118,
+        "pearson": 0.4297169327288284,
+        "spearman": 0.3979181772914897,
+        "ci": 0.6437246963562753
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 1.1102230246251565e-16,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "NCMol",
+      "model": "NCMol",
+      "endpoint": "caco2_log_papp_ab",
+      "split": "random",
+      "partition": "test",
+      "n": 55,
+      "metrics": {
+        "rmse": 0.6318042242960519,
+        "mae": 0.5142136313698509,
+        "r2": 0.4698130766282439,
+        "pearson": 0.7138425613810058,
+        "spearman": 0.6914778539323679,
+        "ci": 0.7501692620176033
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 1.1102230246251565e-16,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "NCMol",
+      "model": "NCMol",
+      "endpoint": "caco2_log_papp_ab",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 56,
+      "metrics": {
+        "rmse": 0.6310340884600207,
+        "mae": 0.5121648907661438,
+        "r2": 0.36232106789032514,
+        "pearson": 0.617922809474774,
+        "spearman": 0.5099404854535252,
+        "ci": 0.6775049767750497
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 1.1102230246251565e-16,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "NCMol",
+      "model": "NCMol",
+      "endpoint": "caco2_log_papp_ba",
+      "split": "random",
+      "partition": "test",
+      "n": 46,
+      "metrics": {
+        "rmse": 0.4244647657508181,
+        "mae": 0.30946098203244415,
+        "r2": 0.4774760985164198,
+        "pearson": 0.7137660940107451,
+        "spearman": 0.6445266728337958,
+        "ci": 0.7265700483091787
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 2.220446049250313e-16,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "NCMol",
+      "model": "NCMol",
+      "endpoint": "caco2_log_papp_ba",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 47,
+      "metrics": {
+        "rmse": 0.5354766951491574,
+        "mae": 0.3683086760500644,
+        "r2": 0.1442414745080679,
+        "pearson": 0.45556401273868385,
+        "spearman": 0.24826549491211838,
+        "ci": 0.5837187789084182
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 5.551115123125783e-17,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "NCMol",
+      "model": "NCMol",
+      "endpoint": "mdck_log10_er",
+      "split": "random",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.5310107406195949,
+        "mae": 0.41942289285361767,
+        "r2": 0.14178027667451243,
+        "pearson": 0.4199550485884573,
+        "spearman": 0.6225167248233127,
+        "ci": 0.7310924369747899
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 5.551115123125783e-17,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "NCMol",
+      "model": "NCMol",
+      "endpoint": "mdck_log10_er",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.6570762538264346,
+        "mae": 0.5619204947724938,
+        "r2": 0.04537171132862916,
+        "pearson": 0.22250452770174978,
+        "spearman": 0.06622518349184178,
+        "ci": 0.5126050420168067
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 5.551115123125783e-17,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "NCMol",
+      "model": "NCMol",
+      "endpoint": "mdck_log_papp_ab",
+      "split": "random",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.5682939650935668,
+        "mae": 0.46284064650535583,
+        "r2": 0.2422065036335247,
+        "pearson": 0.5243934387102358,
+        "spearman": 0.6342900907774179,
+        "ci": 0.7394957983193278
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 0.0,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "NCMol",
+      "model": "NCMol",
+      "endpoint": "mdck_log_papp_ab",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.8733676202016609,
+        "mae": 0.7005794942378998,
+        "r2": -0.2789384490020457,
+        "pearson": 0.33637149030502056,
+        "spearman": 0.2529411764705882,
+        "ci": 0.5583333333333333
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 0.0,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "NCMol",
+      "model": "NCMol+JEPA",
+      "endpoint": "caco2_log10_er",
+      "split": "random",
+      "partition": "test",
+      "n": 45,
+      "metrics": {
+        "rmse": 0.5626015638810887,
+        "mae": 0.4297580872144964,
+        "r2": 0.5208925457914151,
+        "pearson": 0.7834620956313991,
+        "spearman": 0.7670465791729826,
+        "ci": 0.7844129554655871
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 0.0,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "NCMol",
+      "model": "NCMol+JEPA",
+      "endpoint": "caco2_log10_er",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 45,
+      "metrics": {
+        "rmse": 0.7496509150413441,
+        "mae": 0.5697636736763848,
+        "r2": 0.05772458065617836,
+        "pearson": 0.4428170558904329,
+        "spearman": 0.39080308405515174,
+        "ci": 0.6427125506072875
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 5.551115123125783e-17,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "NCMol",
+      "model": "NCMol+JEPA",
+      "endpoint": "caco2_log_papp_ab",
+      "split": "random",
+      "partition": "test",
+      "n": 55,
+      "metrics": {
+        "rmse": 0.5835455335364924,
+        "mae": 0.47197199734774503,
+        "r2": 0.5477136717835227,
+        "pearson": 0.7544781776076774,
+        "spearman": 0.7348823860628475,
+        "ci": 0.7691266079891672
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 1.1102230246251565e-16,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "NCMol",
+      "model": "NCMol+JEPA",
+      "endpoint": "caco2_log_papp_ab",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 56,
+      "metrics": {
+        "rmse": 0.7464589698140596,
+        "mae": 0.6449495809418815,
+        "r2": 0.10770530677501255,
+        "pearson": 0.38718261258010545,
+        "spearman": 0.24321659871191417,
+        "ci": 0.5753151957531519
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 0.0,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "NCMol",
+      "model": "NCMol+JEPA",
+      "endpoint": "caco2_log_papp_ba",
+      "split": "random",
+      "partition": "test",
+      "n": 46,
+      "metrics": {
+        "rmse": 0.4513714769308711,
+        "mae": 0.3504318672677745,
+        "r2": 0.4091311534525959,
+        "pearson": 0.6410513463797736,
+        "spearman": 0.5347517730496454,
+        "ci": 0.6879227053140097
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 1.1102230246251565e-16,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "NCMol",
+      "model": "NCMol+JEPA",
+      "endpoint": "caco2_log_papp_ba",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 47,
+      "metrics": {
+        "rmse": 0.5025711681967882,
+        "mae": 0.3894001067952907,
+        "r2": 0.24618421741166263,
+        "pearson": 0.5034860139882649,
+        "spearman": 0.1971554116558742,
+        "ci": 0.5615171137835338
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 1.1102230246251565e-16,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "NCMol",
+      "model": "NCMol+JEPA",
+      "endpoint": "mdck_log10_er",
+      "split": "random",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.5519699408779632,
+        "mae": 0.43458895199000835,
+        "r2": 0.07269471434776775,
+        "pearson": 0.38321214782326624,
+        "spearman": 0.4885946870953659,
+        "ci": 0.6638655462184874
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 0.0,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "NCMol",
+      "model": "NCMol+JEPA",
+      "endpoint": "mdck_log10_er",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.6504824878432457,
+        "mae": 0.5711788879707456,
+        "r2": 0.0644349854591082,
+        "pearson": 0.27710051099811506,
+        "spearman": 0.13833704996073615,
+        "ci": 0.5630252100840336
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 0.0,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "NCMol",
+      "model": "NCMol+JEPA",
+      "endpoint": "mdck_log_papp_ab",
+      "split": "random",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.6072712868472595,
+        "mae": 0.5135433077812195,
+        "r2": 0.13469287493337645,
+        "pearson": 0.4504195146769465,
+        "spearman": 0.6107433588692075,
+        "ci": 0.7394957983193278
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 0.0,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "NCMol",
+      "model": "NCMol+JEPA",
+      "endpoint": "mdck_log_papp_ab",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.7186349316688126,
+        "mae": 0.5849767625331879,
+        "r2": 0.13409127001693144,
+        "pearson": 0.5207245127360832,
+        "spearman": 0.2823529411764706,
+        "ci": 0.5583333333333333
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 1.1102230246251565e-16,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "dummy_mean",
+      "endpoint": "caco2_log10_er",
+      "split": "random",
+      "partition": "test",
+      "n": 45,
+      "metrics": {
+        "rmse": 0.8165048534656123,
+        "mae": 0.6798758344582398,
+        "r2": -0.009133447652210913,
+        "pearson": null,
+        "spearman": null,
+        "ci": 0.5
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "dummy_mean",
+      "endpoint": "caco2_log10_er",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 45,
+      "metrics": {
+        "rmse": 0.7768584563474012,
+        "mae": 0.6128417034151804,
+        "r2": -0.0119137980762547,
+        "pearson": null,
+        "spearman": null,
+        "ci": 0.5
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "dummy_mean",
+      "endpoint": "caco2_log_papp_ab",
+      "split": "random",
+      "partition": "test",
+      "n": 55,
+      "metrics": {
+        "rmse": 0.8707285145210365,
+        "mae": 0.7305619705574937,
+        "r2": -0.007000117407615969,
+        "pearson": null,
+        "spearman": null,
+        "ci": 0.5
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "dummy_mean",
+      "endpoint": "caco2_log_papp_ab",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 56,
+      "metrics": {
+        "rmse": 0.7950904272502326,
+        "mae": 0.649809032031026,
+        "r2": -0.01234727764406629,
+        "pearson": null,
+        "spearman": null,
+        "ci": 0.5
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "dummy_mean",
+      "endpoint": "caco2_log_papp_ba",
+      "split": "random",
+      "partition": "test",
+      "n": 46,
+      "metrics": {
+        "rmse": 0.5882780593039992,
+        "mae": 0.4472279614039011,
+        "r2": -0.003663611783427001,
+        "pearson": null,
+        "spearman": null,
+        "ci": 0.5
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "dummy_mean",
+      "endpoint": "caco2_log_papp_ba",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 47,
+      "metrics": {
+        "rmse": 0.5789095686032574,
+        "mae": 0.4186832188587692,
+        "r2": -0.00021079609445839864,
+        "pearson": null,
+        "spearman": null,
+        "ci": 0.5
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "dummy_mean",
+      "endpoint": "mdck_log10_er",
+      "split": "random",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.6110331844892404,
+        "mae": 0.475169818578851,
+        "r2": -0.13637449400044632,
+        "pearson": null,
+        "spearman": null,
+        "ci": 0.5
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "dummy_mean",
+      "endpoint": "mdck_log10_er",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.676390739748253,
+        "mae": 0.5664120658969756,
+        "r2": -0.011574960536524737,
+        "pearson": null,
+        "spearman": null,
+        "ci": 0.5
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "dummy_mean",
+      "endpoint": "mdck_log_papp_ab",
+      "split": "random",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.6868209602701932,
+        "mae": 0.5940837816649305,
+        "r2": -0.10685804294698698,
+        "pearson": null,
+        "spearman": null,
+        "ci": 0.5
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "dummy_mean",
+      "endpoint": "mdck_log_papp_ab",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.7875006206622979,
+        "mae": 0.6787006401189237,
+        "r2": -0.039817910180757865,
+        "pearson": null,
+        "spearman": null,
+        "ci": 0.5
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "extra_trees",
+      "endpoint": "caco2_log10_er",
+      "split": "random",
+      "partition": "test",
+      "n": 45,
+      "metrics": {
+        "rmse": 0.5463595217983183,
+        "mae": 0.38182869603842073,
+        "r2": 0.548156444638753,
+        "pearson": 0.7435348666039676,
+        "spearman": 0.6897028804742725,
+        "ci": 0.7661943319838057
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 1.1102230246251565e-16,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "extra_trees",
+      "endpoint": "caco2_log10_er",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 45,
+      "metrics": {
+        "rmse": 0.7017248622585065,
+        "mae": 0.5269603337730673,
+        "r2": 0.17435481855097545,
+        "pearson": 0.4233028709051586,
+        "spearman": 0.4343500898812569,
+        "ci": 0.6589068825910931
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 1.1102230246251565e-16,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "extra_trees",
+      "endpoint": "caco2_log_papp_ab",
+      "split": "random",
+      "partition": "test",
+      "n": 55,
+      "metrics": {
+        "rmse": 0.5128950221468874,
+        "mae": 0.41730827507801305,
+        "r2": 0.6506015649005462,
+        "pearson": 0.8151871715096621,
+        "spearman": 0.7861021475914617,
+        "ci": 0.7916102841677943
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 1.1102230246251565e-16,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "extra_trees",
+      "endpoint": "caco2_log_papp_ab",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 56,
+      "metrics": {
+        "rmse": 0.653163194846351,
+        "mae": 0.5391491130589293,
+        "r2": 0.31681255087898896,
+        "pearson": 0.5663661577510275,
+        "spearman": 0.5019498202436261,
+        "ci": 0.678996036988111
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 1.1102230246251565e-16,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "extra_trees",
+      "endpoint": "caco2_log_papp_ba",
+      "split": "random",
+      "partition": "test",
+      "n": 46,
+      "metrics": {
+        "rmse": 0.42413120528686465,
+        "mae": 0.30562299249216723,
+        "r2": 0.47829700467250946,
+        "pearson": 0.7109435608152923,
+        "spearman": 0.5997533148319456,
+        "ci": 0.7091787439613526
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 1.1102230246251565e-16,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "extra_trees",
+      "endpoint": "caco2_log_papp_ba",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 47,
+      "metrics": {
+        "rmse": 0.5879234971650928,
+        "mae": 0.41426446383779325,
+        "r2": -0.031600912164341244,
+        "pearson": 0.12507219452050578,
+        "spearman": 0.21380666049953745,
+        "ci": 0.5753931544865865
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 2.7755575615628914e-17,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "extra_trees",
+      "endpoint": "mdck_log10_er",
+      "split": "random",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.4354512417755222,
+        "mae": 0.33509909631711715,
+        "r2": 0.4228735877183317,
+        "pearson": 0.7769334323398034,
+        "spearman": 0.7152319817118912,
+        "ci": 0.7647058823529411
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 0.0,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "extra_trees",
+      "endpoint": "mdck_log10_er",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.577166347729152,
+        "mae": 0.5162904346480623,
+        "r2": 0.2634457042890457,
+        "pearson": 0.5637129115593685,
+        "spearman": 0.3399559419247878,
+        "ci": 0.6386554621848739
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 3.3306690738754696e-16,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "extra_trees",
+      "endpoint": "mdck_log_papp_ab",
+      "split": "random",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.4208589024126727,
+        "mae": 0.359999878451431,
+        "r2": 0.5843977588566291,
+        "pearson": 0.7906466300129336,
+        "spearman": 0.7373070428758384,
+        "ci": 0.7899159663865546
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 2.220446049250313e-16,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "extra_trees",
+      "endpoint": "mdck_log_papp_ab",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.567654525496391,
+        "mae": 0.487937110522342,
+        "r2": 0.4597140261484607,
+        "pearson": 0.8332186697323276,
+        "spearman": 0.8029411764705883,
+        "ci": 0.8083333333333333
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 1.1102230246251565e-16,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "random_forest",
+      "endpoint": "caco2_log10_er",
+      "split": "random",
+      "partition": "test",
+      "n": 45,
+      "metrics": {
+        "rmse": 0.5489611517074712,
+        "mae": 0.4017105411063035,
+        "r2": 0.5438430632376456,
+        "pearson": 0.7406669920331564,
+        "spearman": 0.6800843285066306,
+        "ci": 0.7580971659919028
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 1.1102230246251565e-16,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "random_forest",
+      "endpoint": "caco2_log10_er",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 45,
+      "metrics": {
+        "rmse": 0.7041871797624296,
+        "mae": 0.5491844826144183,
+        "r2": 0.16855035717127187,
+        "pearson": 0.4184433762080851,
+        "spearman": 0.41722116171970275,
+        "ci": 0.6427125506072875
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 0.0,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "random_forest",
+      "endpoint": "caco2_log_papp_ab",
+      "split": "random",
+      "partition": "test",
+      "n": 55,
+      "metrics": {
+        "rmse": 0.5310446282973761,
+        "mae": 0.44037933840892296,
+        "r2": 0.6254360056771202,
+        "pearson": 0.8026066306169781,
+        "spearman": 0.7896379475943974,
+        "ci": 0.79702300405954
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 3.3306690738754696e-16,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "random_forest",
+      "endpoint": "caco2_log_papp_ab",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 56,
+      "metrics": {
+        "rmse": 0.6693310317755696,
+        "mae": 0.560851118471596,
+        "r2": 0.2825718871173001,
+        "pearson": 0.5373889732296809,
+        "spearman": 0.4658299558363165,
+        "ci": 0.6684280052840158
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 1.1102230246251565e-16,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "random_forest",
+      "endpoint": "caco2_log_papp_ba",
+      "split": "random",
+      "partition": "test",
+      "n": 46,
+      "metrics": {
+        "rmse": 0.4265005999560292,
+        "mae": 0.30901216171706475,
+        "r2": 0.47245177068486777,
+        "pearson": 0.7209257328527238,
+        "spearman": 0.6333024976873266,
+        "ci": 0.7265700483091787
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 2.220446049250313e-16,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "random_forest",
+      "endpoint": "caco2_log_papp_ba",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 47,
+      "metrics": {
+        "rmse": 0.5813276817179038,
+        "mae": 0.422170247433695,
+        "r2": -0.008584035319003203,
+        "pearson": 0.1443688173743143,
+        "spearman": 0.2334643848288622,
+        "ci": 0.57631822386679
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 0.0,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "random_forest",
+      "endpoint": "mdck_log10_er",
+      "split": "random",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.4768090438918354,
+        "mae": 0.36501012600718413,
+        "r2": 0.30804021956429484,
+        "pearson": 0.6390946049597431,
+        "spearman": 0.5224431142134185,
+        "ci": 0.680672268907563
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 1.1102230246251565e-16,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "random_forest",
+      "endpoint": "mdck_log10_er",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.5803954009058406,
+        "mae": 0.4993725769085958,
+        "r2": 0.2551810987745933,
+        "pearson": 0.5577087822577519,
+        "spearman": 0.27373075843294603,
+        "ci": 0.6050420168067226
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 1.1102230246251565e-16,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "random_forest",
+      "endpoint": "mdck_log_papp_ab",
+      "split": "random",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.4135463809091023,
+        "mae": 0.34078672094793117,
+        "r2": 0.5987146606488457,
+        "pearson": 0.8106300218427095,
+        "spearman": 0.7343637013873121,
+        "ci": 0.773109243697479
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 0.0,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "random_forest",
+      "endpoint": "mdck_log_papp_ab",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.5341961078733536,
+        "mae": 0.45200152729050197,
+        "r2": 0.5215275649368596,
+        "pearson": 0.863767535266214,
+        "spearman": 0.7735294117647058,
+        "ci": 0.7833333333333333
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 2.220446049250313e-16,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "ridge",
+      "endpoint": "caco2_log10_er",
+      "split": "random",
+      "partition": "test",
+      "n": 45,
+      "metrics": {
+        "rmse": 0.6387034369852361,
+        "mae": 0.43654583349763537,
+        "r2": 0.38251051547945714,
+        "pearson": 0.6842220952980211,
+        "spearman": 0.6472099625350324,
+        "ci": 0.7327935222672065
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 2.220446049250313e-16,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "ridge",
+      "endpoint": "caco2_log10_er",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 45,
+      "metrics": {
+        "rmse": 0.8498913478746597,
+        "mae": 0.6741708493631384,
+        "r2": -0.21111822316361106,
+        "pearson": 0.2655056132047133,
+        "spearman": 0.27953093149797864,
+        "ci": 0.6012145748987854
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 5.551115123125783e-17,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "ridge",
+      "endpoint": "caco2_log_papp_ab",
+      "split": "random",
+      "partition": "test",
+      "n": 55,
+      "metrics": {
+        "rmse": 0.6213704685086494,
+        "mae": 0.4802092488078169,
+        "r2": 0.48717970369619856,
+        "pearson": 0.7415586567850673,
+        "spearman": 0.6946043026175336,
+        "ci": 0.7665764546684709
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 1.1102230246251565e-16,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "ridge",
+      "endpoint": "caco2_log_papp_ab",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 56,
+      "metrics": {
+        "rmse": 0.7500747452350383,
+        "mae": 0.5509138102774483,
+        "r2": 0.09903990391337525,
+        "pearson": 0.5116721628942615,
+        "spearman": 0.44749638829624266,
+        "ci": 0.6677675033025099
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 2.220446049250313e-16,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "ridge",
+      "endpoint": "caco2_log_papp_ba",
+      "split": "random",
+      "partition": "test",
+      "n": 46,
+      "metrics": {
+        "rmse": 0.5912495472795071,
+        "mae": 0.3745581182051231,
+        "r2": -0.013828555163803324,
+        "pearson": 0.4749817638485542,
+        "spearman": 0.517113783533765,
+        "ci": 0.6898550724637681
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 5.551115123125783e-17,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "ridge",
+      "endpoint": "caco2_log_papp_ba",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 47,
+      "metrics": {
+        "rmse": 0.740259031361957,
+        "mae": 0.5084667732925922,
+        "r2": -0.6354509042778016,
+        "pearson": 0.07746896826431315,
+        "spearman": 0.07412118408880666,
+        "ci": 0.5319148936170213
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 2.7755575615628914e-17,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "ridge",
+      "endpoint": "mdck_log10_er",
+      "split": "random",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.46120230987426647,
+        "mae": 0.40208954691672516,
+        "r2": 0.3525968158757339,
+        "pearson": 0.6020081306209131,
+        "spearman": 0.5194997727248921,
+        "ci": 0.6974789915966386
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 1.1102230246251565e-16,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "ridge",
+      "endpoint": "mdck_log10_er",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.6379799942923894,
+        "mae": 0.5757894212992771,
+        "r2": 0.10005310036895987,
+        "pearson": 0.4515942078128995,
+        "spearman": 0.518028101980629,
+        "ci": 0.6974789915966386
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 1.1102230246251565e-16,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "ridge",
+      "endpoint": "mdck_log_papp_ab",
+      "split": "random",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.576497199760691,
+        "mae": 0.46673322128379824,
+        "r2": 0.22017123865417898,
+        "pearson": 0.6202181755495856,
+        "spearman": 0.5783666024954182,
+        "ci": 0.7226890756302521
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 1.1102230246251565e-16,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "ridge",
+      "endpoint": "mdck_log_papp_ab",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.6761023978277928,
+        "mae": 0.5636532106348573,
+        "r2": 0.2335559863791381,
+        "pearson": 0.4847738594210488,
+        "spearman": 0.4088235294117647,
+        "ci": 0.6583333333333333
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 1.1102230246251565e-16,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "svr_rbf",
+      "endpoint": "caco2_log10_er",
+      "split": "random",
+      "partition": "test",
+      "n": 45,
+      "metrics": {
+        "rmse": 0.6043678225043737,
+        "mae": 0.4431123018532159,
+        "r2": 0.4471163750911583,
+        "pearson": 0.6703168762048435,
+        "spearman": 0.6949733199085968,
+        "ci": 0.7550607287449392
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 1.1102230246251565e-16,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "svr_rbf",
+      "endpoint": "caco2_log10_er",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 45,
+      "metrics": {
+        "rmse": 0.7330486217830618,
+        "mae": 0.5787909995869569,
+        "r2": 0.09899897325326157,
+        "pearson": 0.31975759804942083,
+        "spearman": 0.4162329543257669,
+        "ci": 0.6417004048582996
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 5.551115123125783e-17,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "svr_rbf",
+      "endpoint": "caco2_log_papp_ab",
+      "split": "random",
+      "partition": "test",
+      "n": 55,
+      "metrics": {
+        "rmse": 0.5322280226741032,
+        "mae": 0.44130244317412337,
+        "r2": 0.6237647683313738,
+        "pearson": 0.7954112470122847,
+        "spearman": 0.7585012598134432,
+        "ci": 0.7855209742895806
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 1.1102230246251565e-16,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "svr_rbf",
+      "endpoint": "caco2_log_papp_ab",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 56,
+      "metrics": {
+        "rmse": 0.6453226625514928,
+        "mae": 0.54557186631211,
+        "r2": 0.33311599058992836,
+        "pearson": 0.5942157610443973,
+        "spearman": 0.526200751933761,
+        "ci": 0.6988110964332893
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 2.220446049250313e-16,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "svr_rbf",
+      "endpoint": "caco2_log_papp_ba",
+      "split": "random",
+      "partition": "test",
+      "n": 46,
+      "metrics": {
+        "rmse": 0.42454758156934136,
+        "mae": 0.3136899122945585,
+        "r2": 0.47727217378280884,
+        "pearson": 0.6953092432598058,
+        "spearman": 0.5929694727104533,
+        "ci": 0.7101449275362319
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 0.0,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "svr_rbf",
+      "endpoint": "caco2_log_papp_ba",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 47,
+      "metrics": {
+        "rmse": 0.5922375883512603,
+        "mae": 0.43089269690349746,
+        "r2": -0.04679591175436837,
+        "pearson": 0.11371397078626763,
+        "spearman": 0.2200508788159112,
+        "ci": 0.580018501387604
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 2.7755575615628914e-17,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "svr_rbf",
+      "endpoint": "mdck_log10_er",
+      "split": "random",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.474904662766277,
+        "mae": 0.3779356489345377,
+        "r2": 0.31355657290242267,
+        "pearson": 0.6076954814258047,
+        "spearman": 0.49448137007241855,
+        "ci": 0.680672268907563
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 1.1102230246251565e-16,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "svr_rbf",
+      "endpoint": "mdck_log10_er",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.5867487131219323,
+        "mae": 0.500555979073108,
+        "r2": 0.2387854937809848,
+        "pearson": 0.5073656777636943,
+        "spearman": 0.42236950360352415,
+        "ci": 0.680672268907563
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 1.1102230246251565e-16,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "svr_rbf",
+      "endpoint": "mdck_log_papp_ab",
+      "split": "random",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.4926246695657105,
+        "mae": 0.4155625414734755,
+        "r2": 0.4305741778460541,
+        "pearson": 0.6650012318243836,
+        "spearman": 0.6563651519413651,
+        "ci": 0.7647058823529411
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 0.0,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "svr_rbf",
+      "endpoint": "mdck_log_papp_ab",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.6731087062823308,
+        "mae": 0.5624914633847882,
+        "r2": 0.2403283838953274,
+        "pearson": 0.49344196383661915,
+        "spearman": 0.45,
+        "ci": 0.6666666666666666
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 5.551115123125783e-17,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "xgboost",
+      "endpoint": "caco2_log10_er",
+      "split": "random",
+      "partition": "test",
+      "n": 45,
+      "metrics": {
+        "rmse": 0.5764454317378436,
+        "mae": 0.42317954585454226,
+        "r2": 0.49702376757122946,
+        "pearson": 0.7245059810378505,
+        "spearman": 0.6881114738391031,
+        "ci": 0.7555668016194332
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 1.1102230246251565e-16,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "xgboost",
+      "endpoint": "caco2_log10_er",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 45,
+      "metrics": {
+        "rmse": 0.755179251765826,
+        "mae": 0.5873185468130602,
+        "r2": 0.0437755996695085,
+        "pearson": 0.3666276532623866,
+        "spearman": 0.3512747882977191,
+        "ci": 0.6072874493927125
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 0.0,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "xgboost",
+      "endpoint": "caco2_log_papp_ab",
+      "split": "random",
+      "partition": "test",
+      "n": 55,
+      "metrics": {
+        "rmse": 0.49757789252014467,
+        "mae": 0.3913748764434258,
+        "r2": 0.6711588638717652,
+        "pearson": 0.8280744663974586,
+        "spearman": 0.7937510210672002,
+        "ci": 0.7997293640054127
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 2.220446049250313e-16,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "xgboost",
+      "endpoint": "caco2_log_papp_ab",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 56,
+      "metrics": {
+        "rmse": 0.7509741887836361,
+        "mae": 0.6068569410430908,
+        "r2": 0.09687785641150226,
+        "pearson": 0.4452995099141643,
+        "spearman": 0.35052686595275506,
+        "ci": 0.6175693527080581
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 1.6653345369377348e-16,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "xgboost",
+      "endpoint": "caco2_log_papp_ba",
+      "split": "random",
+      "partition": "test",
+      "n": 46,
+      "metrics": {
+        "rmse": 0.36389053944178773,
+        "mae": 0.2818035748710247,
+        "r2": 0.6159706595523797,
+        "pearson": 0.7899615115208884,
+        "spearman": 0.6801726796176379,
+        "ci": 0.7526570048309179
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 0.0,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "xgboost",
+      "endpoint": "caco2_log_papp_ba",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 47,
+      "metrics": {
+        "rmse": 0.5606777183986997,
+        "mae": 0.40818118464259884,
+        "r2": 0.06179730354242785,
+        "pearson": 0.28411302742579686,
+        "spearman": 0.24606845513413508,
+        "ci": 0.5864939870490287
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 5.551115123125783e-17,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "xgboost",
+      "endpoint": "mdck_log10_er",
+      "split": "random",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.46531910505464524,
+        "mae": 0.3996954188831806,
+        "r2": 0.3409875005946953,
+        "pearson": 0.5937419602952758,
+        "spearman": 0.4459162355117346,
+        "ci": 0.6638655462184874
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 0.0,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "xgboost",
+      "endpoint": "mdck_log10_er",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.562108551168492,
+        "mae": 0.48178249625784736,
+        "r2": 0.30137656682552927,
+        "pearson": 0.5541826144272803,
+        "spearman": 0.38557773499694536,
+        "ci": 0.6386554621848739
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 0.0,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "xgboost",
+      "endpoint": "mdck_log_papp_ab",
+      "split": "random",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.4231428726194128,
+        "mae": 0.37590059613311766,
+        "r2": 0.5798746333476881,
+        "pearson": 0.7792710905692446,
+        "spearman": 0.6784402131053124,
+        "ci": 0.7394957983193278
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 1.1102230246251565e-16,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_direct",
+      "family": "Traditional ML",
+      "model": "xgboost",
+      "endpoint": "mdck_log_papp_ab",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.4515062151039567,
+        "mae": 0.3865474517294465,
+        "r2": 0.6581914280561423,
+        "pearson": 0.8840763964443994,
+        "spearman": 0.8705882352941177,
+        "ci": 0.8583333333333333
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 0.0,
+        "spearman": 0.0
+      }
+    },
+    {
+      "section": "cell_transfer",
+      "family": "NCMol",
+      "model": "NCMol (PAMPA-adapted)",
+      "endpoint": "caco2_log10_er",
+      "split": "random",
+      "partition": "test",
+      "n": 45,
+      "metrics": {
+        "rmse": 0.5649870848994252,
+        "mae": 0.4022051765686936,
+        "r2": 0.5168209467781516,
+        "pearson": 0.7539224074729759,
+        "spearman": 0.7207984731367862,
+        "ci": 0.7763157894736842
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 0.0,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    },
+    {
+      "section": "cell_transfer",
+      "family": "NCMol",
+      "model": "NCMol (PAMPA-adapted)",
+      "endpoint": "caco2_log10_er",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 45,
+      "metrics": {
+        "rmse": 0.7906021778957423,
+        "mae": 0.6087870922353532,
+        "r2": -0.04803484893495469,
+        "pearson": 0.3660851703577925,
+        "spearman": 0.33539758950181686,
+        "ci": 0.6234817813765182
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 1.6653345369377348e-16,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    },
+    {
+      "section": "cell_transfer",
+      "family": "NCMol",
+      "model": "NCMol (PAMPA-adapted)",
+      "endpoint": "caco2_log_papp_ab",
+      "split": "random",
+      "partition": "test",
+      "n": 55,
+      "metrics": {
+        "rmse": 0.5196875128201798,
+        "mae": 0.37885345979170365,
+        "r2": 0.6412858365943199,
+        "pearson": 0.840163894341976,
+        "spearman": 0.8184442284686584,
+        "ci": 0.8144888287068381
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 0.0,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    },
+    {
+      "section": "cell_transfer",
+      "family": "NCMol",
+      "model": "NCMol (PAMPA-adapted)",
+      "endpoint": "caco2_log_papp_ab",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 56,
+      "metrics": {
+        "rmse": 0.7155995899839964,
+        "mae": 0.5814178245408195,
+        "r2": 0.17995705994711253,
+        "pearson": 0.5163847633829259,
+        "spearman": 0.4496838126437783,
+        "ci": 0.6655607166556071
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 0.0,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    },
+    {
+      "section": "cell_transfer",
+      "family": "NCMol",
+      "model": "NCMol (PAMPA-adapted)",
+      "endpoint": "caco2_log_papp_ba",
+      "split": "random",
+      "partition": "test",
+      "n": 46,
+      "metrics": {
+        "rmse": 0.39922305888021675,
+        "mae": 0.2929724299389383,
+        "r2": 0.5377742827883589,
+        "pearson": 0.7373085138482577,
+        "spearman": 0.5349984582176996,
+        "ci": 0.6927536231884058
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 1.1102230246251565e-16,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    },
+    {
+      "section": "cell_transfer",
+      "family": "NCMol",
+      "model": "NCMol (PAMPA-adapted)",
+      "endpoint": "caco2_log_papp_ba",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 47,
+      "metrics": {
+        "rmse": 0.537336732991712,
+        "mae": 0.3924791762169371,
+        "r2": 0.13828600415979952,
+        "pearson": 0.37528861405872693,
+        "spearman": 0.1877890841813136,
+        "ci": 0.5689176688251619
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 1.1102230246251565e-16,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    },
+    {
+      "section": "cell_transfer",
+      "family": "NCMol",
+      "model": "NCMol (PAMPA-adapted)",
+      "endpoint": "mdck_log10_er",
+      "split": "random",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.5312212513094589,
+        "mae": 0.43040986359119415,
+        "r2": 0.14109968691258779,
+        "pearson": 0.4218116739544388,
+        "spearman": 0.4576896014658398,
+        "ci": 0.6722689075630253
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 5.551115123125783e-17,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    },
+    {
+      "section": "cell_transfer",
+      "family": "NCMol",
+      "model": "NCMol (PAMPA-adapted)",
+      "endpoint": "mdck_log10_er",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.6570779291079446,
+        "mae": 0.553023680113256,
+        "r2": 0.045366843482164576,
+        "pearson": 0.29394826210939806,
+        "spearman": 0.1633554526132097,
+        "ci": 0.5630252100840336
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 0.0,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    },
+    {
+      "section": "cell_transfer",
+      "family": "NCMol",
+      "model": "NCMol (PAMPA-adapted)",
+      "endpoint": "mdck_log_papp_ab",
+      "split": "random",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.3749448226032576,
+        "mae": 0.28195953369140625,
+        "r2": 0.6701325163579577,
+        "pearson": 0.8336228165621502,
+        "spearman": 0.7652687870168382,
+        "ci": 0.8151260504201681
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 1.1102230246251565e-16,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    },
+    {
+      "section": "cell_transfer",
+      "family": "NCMol",
+      "model": "NCMol (PAMPA-adapted)",
+      "endpoint": "mdck_log_papp_ab",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.6264298602679715,
+        "mae": 0.4771374762058258,
+        "r2": 0.342038664930442,
+        "pearson": 0.6587187175571858,
+        "spearman": 0.5794117647058823,
+        "ci": 0.725
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 0.0,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    },
+    {
+      "section": "cell_transfer",
+      "family": "NCMol",
+      "model": "NCMol (PAMPA-adapted)+JEPA",
+      "endpoint": "caco2_log10_er",
+      "split": "random",
+      "partition": "test",
+      "n": 45,
+      "metrics": {
+        "rmse": 0.517451269583758,
+        "mae": 0.3912432353529665,
+        "r2": 0.5947061894404095,
+        "pearson": 0.78842120449067,
+        "spearman": 0.7570327442477663,
+        "ci": 0.7935222672064778
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 0.0,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    },
+    {
+      "section": "cell_transfer",
+      "family": "NCMol",
+      "model": "NCMol (PAMPA-adapted)+JEPA",
+      "endpoint": "caco2_log10_er",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 45,
+      "metrics": {
+        "rmse": 0.7672294347821087,
+        "mae": 0.617196669181188,
+        "r2": 0.013015747284650936,
+        "pearson": 0.38309258537669083,
+        "spearman": 0.3334211747139453,
+        "ci": 0.6234817813765182
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 5.551115123125783e-17,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    },
+    {
+      "section": "cell_transfer",
+      "family": "NCMol",
+      "model": "NCMol (PAMPA-adapted)+JEPA",
+      "endpoint": "caco2_log_papp_ab",
+      "split": "random",
+      "partition": "test",
+      "n": 55,
+      "metrics": {
+        "rmse": 0.5244437518417144,
+        "mae": 0.3795035362243652,
+        "r2": 0.6346898049089816,
+        "pearson": 0.8227136653284586,
+        "spearman": 0.8046254954628614,
+        "ci": 0.8104265402843602
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 0.0,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    },
+    {
+      "section": "cell_transfer",
+      "family": "NCMol",
+      "model": "NCMol (PAMPA-adapted)+JEPA",
+      "endpoint": "caco2_log_papp_ab",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 56,
+      "metrics": {
+        "rmse": 0.6274414972248336,
+        "mae": 0.5074041741234916,
+        "r2": 0.36956124230830967,
+        "pearson": 0.6573535782039156,
+        "spearman": 0.5869294200486023,
+        "ci": 0.7186463171864632
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 0.0,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    },
+    {
+      "section": "cell_transfer",
+      "family": "NCMol",
+      "model": "NCMol (PAMPA-adapted)+JEPA",
+      "endpoint": "caco2_log_papp_ba",
+      "split": "random",
+      "partition": "test",
+      "n": 46,
+      "metrics": {
+        "rmse": 0.37496053350681235,
+        "mae": 0.2671370506286621,
+        "r2": 0.5922499846790199,
+        "pearson": 0.7746427170355572,
+        "spearman": 0.5785383903792785,
+        "ci": 0.7101449275362319
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 0.0,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    },
+    {
+      "section": "cell_transfer",
+      "family": "NCMol",
+      "model": "NCMol (PAMPA-adapted)+JEPA",
+      "endpoint": "caco2_log_papp_ba",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 47,
+      "metrics": {
+        "rmse": 0.49665641024733614,
+        "mae": 0.35703892403460563,
+        "r2": 0.26382311644821443,
+        "pearson": 0.5198258061874905,
+        "spearman": 0.3384597594819611,
+        "ci": 0.6170212765957447
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 1.1102230246251565e-16,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    },
+    {
+      "section": "cell_transfer",
+      "family": "NCMol",
+      "model": "NCMol (PAMPA-adapted)+JEPA",
+      "endpoint": "mdck_log10_er",
+      "split": "random",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.4541520583415508,
+        "mae": 0.40192517079412937,
+        "r2": 0.3722388231027679,
+        "pearson": 0.6171551509654101,
+        "spearman": 0.4650479551871556,
+        "ci": 0.6722689075630253
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 0.0,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    },
+    {
+      "section": "cell_transfer",
+      "family": "NCMol",
+      "model": "NCMol (PAMPA-adapted)+JEPA",
+      "endpoint": "mdck_log10_er",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.5993012099478678,
+        "mae": 0.5315172197297215,
+        "r2": 0.20586732826024956,
+        "pearson": 0.47798349536000434,
+        "spearman": 0.3796910520198928,
+        "ci": 0.6302521008403361
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 1.6653345369377348e-16,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    },
+    {
+      "section": "cell_transfer",
+      "family": "NCMol",
+      "model": "NCMol (PAMPA-adapted)+JEPA",
+      "endpoint": "mdck_log_papp_ab",
+      "split": "random",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.3301052840460973,
+        "mae": 0.2537515163421631,
+        "r2": 0.7443123581332303,
+        "pearson": 0.8694521567617908,
+        "spearman": 0.8094189093447327,
+        "ci": 0.8151260504201681
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 0.0,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    },
+    {
+      "section": "cell_transfer",
+      "family": "NCMol",
+      "model": "NCMol (PAMPA-adapted)+JEPA",
+      "endpoint": "mdck_log_papp_ab",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 16,
+      "metrics": {
+        "rmse": 0.74337172924011,
+        "mae": 0.5759007036685944,
+        "r2": 0.07345279132535931,
+        "pearson": 0.4992808174426417,
+        "spearman": 0.4735294117647058,
+        "ci": 0.6666666666666666
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 5.551115123125783e-17,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    },
+    {
+      "section": "pampa",
+      "family": "NCMol",
+      "model": "NCMol",
+      "endpoint": "pampa",
+      "split": "cliff",
+      "partition": "test",
+      "n": 512,
+      "metrics": {
+        "rmse": 0.5274204169855689,
+        "mae": 0.39611935801804066,
+        "r2": 0.6568498464543158,
+        "pearson": 0.8108803306505614,
+        "spearman": 0.821770472590269,
+        "ci": 0.8160569261709935
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 0.0,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    },
+    {
+      "section": "pampa",
+      "family": "NCMol",
+      "model": "NCMol",
+      "endpoint": "pampa",
+      "split": "random",
+      "partition": "test",
+      "n": 512,
+      "metrics": {
+        "rmse": 0.4516441177691947,
+        "mae": 0.3290173290297389,
+        "r2": 0.6952760559864943,
+        "pearson": 0.8437699415467652,
+        "spearman": 0.8504020982453593,
+        "ci": 0.8328137238339502
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 0.0,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    },
+    {
+      "section": "pampa",
+      "family": "NCMol",
+      "model": "NCMol",
+      "endpoint": "pampa",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 512,
+      "metrics": {
+        "rmse": 0.48385849322193675,
+        "mae": 0.3591891350224614,
+        "r2": 0.6550983344405805,
+        "pearson": 0.8114013292684398,
+        "spearman": 0.8079715880560332,
+        "ci": 0.8098162814503529
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 3.3306690738754696e-16,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    },
+    {
+      "section": "pampa",
+      "family": "NCMol",
+      "model": "NCMol+JEPA",
+      "endpoint": "pampa",
+      "split": "cliff",
+      "partition": "test",
+      "n": 512,
+      "metrics": {
+        "rmse": 0.5453933512270478,
+        "mae": 0.4118983717635274,
+        "r2": 0.6330642719360726,
+        "pearson": 0.7981890899046937,
+        "spearman": 0.8075499685098281,
+        "ci": 0.806054930377512
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 2.220446049250313e-16,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    },
+    {
+      "section": "pampa",
+      "family": "NCMol",
+      "model": "NCMol+JEPA",
+      "endpoint": "pampa",
+      "split": "random",
+      "partition": "test",
+      "n": 512,
+      "metrics": {
+        "rmse": 0.4554660794199762,
+        "mae": 0.33076747227460146,
+        "r2": 0.6900968851311606,
+        "pearson": 0.8312350664199325,
+        "spearman": 0.8402024424334662,
+        "ci": 0.8257567613226238
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 1.1102230246251565e-16,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    },
+    {
+      "section": "pampa",
+      "family": "NCMol",
+      "model": "NCMol+JEPA",
+      "endpoint": "pampa",
+      "split": "scaffold",
+      "partition": "test",
+      "n": 512,
+      "metrics": {
+        "rmse": 0.5066851800995017,
+        "mae": 0.38076110649853945,
+        "r2": 0.6217883013442297,
+        "pearson": 0.7911849819479904,
+        "spearman": 0.7938399501086841,
+        "ci": 0.80115757309874
+      },
+      "absolute_differences": {
+        "rmse": 0.0,
+        "mae": 0.0,
+        "r2": 0.0,
+        "pearson": 0.0,
+        "spearman": 0.0,
+        "ci": 0.0
+      }
+    }
+  ]
+}

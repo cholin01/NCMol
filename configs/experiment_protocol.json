@@ -1,0 +1,21 @@
+{
+  "seed": 42,
+  "epochs": 30,
+  "batch_size": 16,
+  "gradient_accumulation": 1,
+  "learning_rate": 0.0001,
+  "weight_decay": 0.0001,
+  "dropout": 0.2,
+  "gradient_clip_norm": 1.0,
+  "alignment_weight": 0.1,
+  "jepa_weight": 0.1,
+  "jepa_momentum": 0.996,
+  "jepa_hidden_dim": 256,
+  "checkpoint_selection": "minimum validation RMSE",
+  "test_evaluation": "once after training and validation-only checkpoint selection",
+  "transfer_policy_default": "molecule-disjoint",
+  "initialization_provenance": "task-aware training and selection ancestry; explicit cross-task policy permits different-endpoint molecule overlap",
+  "conformer_aggregation": "mean prediction across conformers",
+  "target_scaling": "z-score fitted on training labels; metrics on original scale",
+  "nan_inf_policy": "skip batch when loss or any trainable gradient is non-finite"
+}
