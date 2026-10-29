@@ -91,12 +91,6 @@ while preserving target-task holdouts. The default `molecule-disjoint` policy al
 excludes source training/selection molecules from target holdouts. Task identities
 and transfer ancestry are stored in checkpoints.
 
-Labels are standardized with training-set statistics. Loss uses standardized
-labels; metrics and exported predictions use the original modelling scale.
-The lowest validation RMSE selects `best.pt`; the scheduler also uses validation only.
-Test predictions are computed after training using the selected checkpoint.
-Non-finite updates are skipped and recorded.
-
 Each run produces `best.pt`, `config.json`, `history.jsonl`, `metrics.json`,
 `predictions_val.csv` and `predictions_test.csv`.
 
@@ -151,10 +145,3 @@ prepare_csv.py      Preparation from labelled SMILES
 prepare_data.py     Topology augmentation of stored 3D inputs
 scripts/run_all.sh  Retained experiment grid
 ```
-
-## License and attribution
-
-NCMol is released under the [MIT license](LICENSE). The integrated geometry
-implementation is adapted from [LiTEN-FF](https://github.com/lingcon01/LiTEN-FF),
-revision `ee38b4ceda1b4f699d8e6b294f38255a70746cc1`; its original MIT copyright
-and license are preserved in [licenses/LiTEN-FF-MIT.txt](licenses/LiTEN-FF-MIT.txt).
